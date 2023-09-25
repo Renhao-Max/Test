@@ -1,5 +1,5 @@
 // electron 模块可以用来控制应用的生命周期和创建原生浏览窗口
-const { app, BrowserWindow, Menu } = require('electron')
+const { app, BrowserWindow, Menu,globalShortcut } = require('electron')
 const path = require('path')
 const isDev = require('electron-is-dev')
 
@@ -30,6 +30,12 @@ const createWindow = () => {
     }
 
     creatMenu()
+
+    globalShortcut.register('CommandOrControl+Shift+i',()=>{
+        mainWindow.webContents.isDevToolsOpened()
+        ?mainWindow.webContents.closeDevTools()
+        :mainWindow.webContents.openDevTools()
+    })
 }
 
 const creatMenu = () => {
