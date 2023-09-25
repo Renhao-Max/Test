@@ -1,5 +1,5 @@
 // electron 模块可以用来控制应用的生命周期和创建原生浏览窗口
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow, Menu } = require('electron')
 const path = require('path')
 const isDev = require('electron-is-dev')
 
@@ -11,7 +11,7 @@ const createWindow = () => {
         webPreferences: {
             preload: path.join(__dirname, 'preload.js')
         },
-        icon:'public/favicon.ico'
+        icon: 'public/favicon.ico'
     })
 
     // 加载项目页面
@@ -26,7 +26,24 @@ const createWindow = () => {
     )
     if (isDev) {
         // 只有开发环境才打开开发者工具
-        mainWindow.webContents.openDevTools()
+        // mainWindow.webContents.openDevTools()
+    }
+
+    creatMenu()
+}
+
+const creatMenu = () => {
+    if (process.platform === 'darwin') {
+        const template = [
+            {
+                label: 'Demo',
+                submenu: [{ role: 'about' }, { role: 'quie' }]
+            }
+        ]
+        let menu=Menu.buildFromTemplate(template)
+        Menu.setApplicationMenu(menu)
+    }else{
+        Menu.setApplicationMenu(null)
     }
 }
 
