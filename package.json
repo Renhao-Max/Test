@@ -9,7 +9,10 @@
       "build/**/*",
       "src/main.js",
       "src/preload.js"
-    ]
+    ],
+    "win": {
+      "icon": "public/m.ico"
+    }
   },
   "dependencies": {
     "@babel/core": "^7.16.0",

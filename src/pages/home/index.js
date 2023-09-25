@@ -13,7 +13,7 @@ function Home() {
             <h1>Home Page</h1>
             <div></div>
             <div className="ipt-con">
-                <Button onClick={()=>goto('/login')}>返回登录0</Button>
+                <Button onClick={()=>goto('/login')}>返回登录</Button>
             </div>
             {/* <MyComponent/> */}
         </div>
