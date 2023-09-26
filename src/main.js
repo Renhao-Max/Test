@@ -59,5 +59,4 @@ app.on('window-all-closed', () => {
     if (process.platform !== 'darwin') app.quit()
 })
 
-// 在当前文件中你可以引入所有的主进程代码
-// 也可以拆分成几个文件，然后用 require 导入。
+require('./ipcMain/readDir')
