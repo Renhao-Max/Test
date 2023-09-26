@@ -1,6 +1,6 @@
 {
   "name": "mycra",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "main": "./src/main.js",
   "homepage": "./",
@@ -8,7 +8,8 @@
     "files": [
       "build/**/*",
       "src/main.js",
-      "src/preload.js"
+      "src/preload.js",
+      "src/ipcMain/**/*"
     ],
     "win": {
       "icon": "public/m.ico"
