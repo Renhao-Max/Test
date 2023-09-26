@@ -10,6 +10,9 @@ contextBridge.exposeInMainWorld('electron', {
 contextBridge.exposeInMainWorld('api', {
     // 读取目录文件列表回调
     readDirReply: (callback) => {
-        ipcRenderer.once('readDir-reply', (event, result)=>{callback(event, result)})
-    }  
+        ipcRenderer.once(
+            'readDir-reply',
+            (event, result) => { callback(event, result) }
+        )
+    }
 })

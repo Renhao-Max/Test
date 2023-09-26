@@ -3,12 +3,10 @@ const { ipcMain, dialog } = require('electron')
 const fs = require('fs')
 const path = require('path')
 
-// 打开选择目录对话框并遍历目录里的所有文件
 ipcMain.on('readDir', (event, arg) => {
     console.log('接收渲染进程传参：', arg)
     dialog
         .showOpenDialog({
-            // 只允许选择文件夹
             properties: ['openDirectory'],
         })
         .then((result) => {
@@ -30,13 +28,9 @@ function loadFilesInDir(dir) {
         // 获取信息
         let fileData = fs.statSync(filePath)
         // 判断是文件还是目录
-        if (fileData.isFile()) {
-            // 如果是文件，则记录下来
-            fileList.push(filePath)
-        } else {
-            // 如果是目录，则递归遍历，并拼接结果
-            fileList = fileList.concat(loadFilesInDir(filePath))
-        }
+        fileData.isFile()
+            ? fileList.push(filePath)
+            : fileList = fileList.concat(loadFilesInDir(filePath))
     }
     return fileList
 }
