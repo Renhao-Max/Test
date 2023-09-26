@@ -4,6 +4,8 @@ import './login.styl'
 
 import { useNavigate } from 'react-router-dom'
 
+// import from '../../windows/renhaomax.js'
+
 function Login() {
 
     const navigate=useNavigate()
