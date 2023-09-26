@@ -16,3 +16,5 @@ contextBridge.exposeInMainWorld('api', {
         )
     }
 })
+
+contextBridge.exposeInMainWorld('process',{})

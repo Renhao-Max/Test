@@ -5,6 +5,24 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "command": "npm start",
+            "name": "Run npm start",
+            "request": "launch",
+            "type": "node-terminal"
+        },
+        {
+            "command": "yarn e:build",
+            "name": "e:build",
+            "request": "launch",
+            "type": "node-terminal"
+        },
+        {
+            "command": "yarn e:start",
+            "name": "e:start",
+            "request": "launch",
+            "type": "node-terminal"
+        },
+        {
             "name": "Electron Main",
             "program": "${workspaceFolder}/src/main.js",
             "request": "launch",

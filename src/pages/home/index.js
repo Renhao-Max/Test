@@ -24,6 +24,12 @@ function Home() {
         })
     }
 
+    const getElectronVersion = () => {
+        ipcRenderer.invoke('getElectronVersion').then((result) => {
+            console.log(result)
+        })
+    }
+
     return (
         <div className="P-home">
             <h1>Home Page</h1>
@@ -32,6 +38,11 @@ function Home() {
             </div>
             <div className="ipt-con">
                 <Button onClick={() => goto('/login')}>返回登录</Button>
+            </div>
+            <div className='ipt-con'>
+                <Button type='primary' onClick={getElectronVersion}>
+                    查看Electron版本
+                </Button>
             </div>
             {/* <MyComponent/> */}
         </div>
