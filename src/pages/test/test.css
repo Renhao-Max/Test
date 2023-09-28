@@ -1,0 +1,39 @@
+body {
+    background-color: aliceblue;
+}
+
+h1 {
+    font-weight: 100;
+}
+
+#blog>h1 {
+    background-color: #fff;
+}
+
+a::before{
+    content:"⭐";
+    display: inline-block;
+}
+
+
+a:hover::before{
+    content: "Hover💕";
+    display:inline-block;
+}
+
+a:hover::before{
+    content: "Hover💕";
+    display:inline-block;
+}
+
+
+a:hover::before{
+    content: "Hover💕";
+    display:inline-block;
+}
+
+a:hover::before{
+
+    content: "Hover💕";
+    display:inline-block;
+}
